@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Admission Form</title>
+</head>
+<body class="p-4">
+
+  <form class="row g-3 needs-validation" novalidate>
+
+    <div class="col-md-6">
+      <label for="fullName" class="form-label">full Name</label>
+      <input type="text" class="form-control" id="fullName" required>
+      <div class="invalid-feedback">enter your full name.</div>
+    </div>
+
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">email</label>
+      <input type="email" class="form-control" id="email" required>
+      <div class="invalid-feedback">enter a valid email.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" required>
+      <div class="invalid-feedback">Enter password.</div>
+    </div>
+
+
+    <div class="col-md-6">
+      <label for="confirmPassword" class="form-label">confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" required>
+      <div class="invalid-feedback">confirm password.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="phone" class="form-label">phone</label>
+      <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" required>
+      <div class="invalid-feedback">enter a valid 10-digit phone number.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="course" class="form-label">Course</label>
+      <select class="form-select" id="course" required>
+        <option selected disabled value="">pick one </option>
+        <option>Artificial intelligence and machine learning</option>
+        <option>Front end development frameworks</option>
+        <option>probability and statistics</option>
+        <option>Object oriented programmin</option>
+      </select>
+      <div class="invalid-feedback">Please select a course.</div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit Form</button>
+    </div>
+  </form>
+
+  <script>
+
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation')
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+</body>
+</html>
